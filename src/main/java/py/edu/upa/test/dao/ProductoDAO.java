@@ -24,7 +24,7 @@ public class ProductoDAO {
 		Criteria criteria = session.createCriteria(Producto.class);
 		
 		criteria.add(Restrictions.and(
-				Restrictions.ilike("description", filter),
+				Restrictions.ilike("nombre", filter),
 				Restrictions.or(
 						Restrictions.eq("deleted", false),
 						Restrictions.isNull("deleted")
@@ -58,15 +58,18 @@ public class ProductoDAO {
 		return (Producto) criteria.uniqueResult();
 
 	}
-	
-	public List<Producto> findByIdCategoria(Integer idCategoria) {
-
+	@SuppressWarnings ("unchecked")
+	public List<Producto> findByCategoria(String descripcionCategoria) {
+		
 		Session session = (Session) entityManager.getDelegate();
 		Criteria criteria = session.createCriteria(Producto.class);
+		criteria.createAlias("categoria", "categoria");
+//		criteria.createAlias(associationPath, alias)
 		
 //		criteria.add(Restrictions.eq("idCategoria", idCategoria));
 		criteria.add(Restrictions.and(
-				Restrictions.ilike("description", idCategoria),
+//				Restrictions.ilike(propertyName, value)
+				Restrictions.ilike("categoria.descripcion", descripcionCategoria),
 				Restrictions.or(
 						Restrictions.eq("deleted", false),
 						Restrictions.isNull("deleted")
@@ -87,7 +90,8 @@ public class ProductoDAO {
 		p.setStockActual(producto.getStockActual());
 		p.setIdProductoEstado(producto.getIdProductoEstado());
 		p.setIdProveedor(producto.getIdProveedor());
-		p.setIdCategoria(producto.getIdCategoria());
+		p.setCategoria(producto.getCategoria());
+		p.setFechaCompra(producto.getFechaCompra());
 		p.setFavorito(producto.getFavorito());
 		p.setDeleted(producto.getDeleted());
 		entityManager.merge(p);

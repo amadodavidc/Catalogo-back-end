@@ -3,6 +3,11 @@ package py.edu.upa.test.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import py.edu.upa.test.entity.Categoria;
+import py.edu.upa.test.entity.Proveedor;
+import py.edu.upa.test.entity.Producto_estado;
+import java.sql.Timestamp;
+
 @Entity
 @Table(name = "Producto", schema = "public")
 public class Producto implements Serializable {
@@ -23,14 +28,20 @@ public class Producto implements Serializable {
 	@Column(name = "stock_actual")
 	private Integer stockActual;
 	
-	@Column(name =  "id_producto_estado")
-	private Integer idProductoEstado;
+	@JoinColumn(name = "id_producto_estado")
+	@ManyToOne
+	private Producto_estado idProductoEstado;
 	
-	@Column(name = "id_proveedor")
-	private Integer idProveedor;
+	@JoinColumn(name = "id_proveedor")
+	@ManyToOne
+	private Proveedor idProveedor;
 	
-	@Column(name = "id_categoria")
-	private Integer idCategoria;
+	@JoinColumn (name = "id_categoria")
+	@ManyToOne
+	private Categoria categoria;
+	
+	@Column(name = "fecha_compra")
+	private Timestamp fechaCompra;
 	
 	@Column
 	private Boolean favorito;
@@ -81,28 +92,36 @@ public class Producto implements Serializable {
 		this.stockActual = stockActual;
 	}
 
-	public Integer getIdProductoEstado() {
+	public Producto_estado getIdProductoEstado() {
 		return idProductoEstado;
 	}
 
-	public void setIdProductoEstado(Integer idProductoEstado) {
+	public void setIdProductoEstado(Producto_estado idProductoEstado) {
 		this.idProductoEstado = idProductoEstado;
 	}
 
-	public Integer getIdProveedor() {
+	public Proveedor getIdProveedor() {
 		return idProveedor;
 	}
 
-	public void setIdProveedor(Integer idProveedor) {
+	public void setIdProveedor(Proveedor idProveedor) {
 		this.idProveedor = idProveedor;
 	}
 
-	public Integer getIdCategoria() {
-		return idCategoria;
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
-	public void setIdCategoria(Integer idCategoria) {
-		this.idCategoria = idCategoria;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	
+	public Timestamp getFechaCompra() {
+		return fechaCompra;
+	}
+
+	public void setFechaCompra(Timestamp fechaCompra) {
+		this.fechaCompra = fechaCompra;
 	}
 
 	public Boolean getFavorito() {

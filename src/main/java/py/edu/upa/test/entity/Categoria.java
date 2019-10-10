@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "categorias", schema = "public")
-public class Categorias implements Serializable{
+public class Categoria implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -14,7 +14,7 @@ public class Categorias implements Serializable{
 	@Column
 	private String descripcion;
 	
-	public Categorias () {
+	public Categoria () {
 	}
 
 	public Integer getId_categoria() {
