@@ -18,12 +18,12 @@ public class Producto_estadoBC {
 		return dao.find();
 	}
 	
-	public Producto_estado findById(Integer id_producto_estado) {
-		return dao.findById(id_producto_estado);
-	}
-	public void update(Integer id_producto_estado, Producto_estado productoEstado) {
-		dao.update(id_producto_estado, productoEstado);
-	}
+//	public Producto_estado findById(Integer id_producto_estado) {
+//		return dao.findById(id_producto_estado);
+//	}
+//	public void update(Integer id_producto_estado, Producto_estado productoEstado) {
+//		dao.update(id_producto_estado, productoEstado);
+//	}
 //	public List<Producto_estado> findWithFilter(String filter) {
 //		return dao.findWithFilter(filter);
 //	}

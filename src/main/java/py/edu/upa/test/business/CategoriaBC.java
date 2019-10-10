@@ -17,13 +17,13 @@ public class CategoriaBC {
 	public List<Categoria> find(){
 		return dao.find();
 	}
-	public Categoria findById(Integer id_categoria) {
-		return dao.findById(id_categoria);
-	}
-	public void update(Integer id_categoria, Categoria categoria) {
-		dao.update(id_categoria, categoria);
-	}
-	public List<Categoria> getWithFilter(String filter) {
-		return dao.findWithFilter(filter);
-	}
+//	public Categoria findById(Integer id_categoria) {
+//		return dao.findById(id_categoria);
+//	}
+//	public void update(Integer id_categoria, Categoria categoria) {
+//		dao.update(id_categoria, categoria);
+//	}
+//	public List<Categoria> getWithFilter(String filter) {
+//		return dao.findWithFilter(filter);
+//	}
 }

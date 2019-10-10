@@ -86,12 +86,11 @@ public class ProductoDAO {
 		Producto p = findById(id_producto);
 		p.setNombre(producto.getNombre());
 		p.setPrecio(producto.getPrecio());
-		p.setStockTotal(producto.getStockTotal());
-		p.setStockActual(producto.getStockActual());
 		p.setIdProductoEstado(producto.getIdProductoEstado());
 		p.setIdProveedor(producto.getIdProveedor());
 		p.setCategoria(producto.getCategoria());
 		p.setFechaCompra(producto.getFechaCompra());
+		p.setImage(producto.getImage());
 		p.setFavorito(producto.getFavorito());
 		p.setDeleted(producto.getDeleted());
 		entityManager.merge(p);

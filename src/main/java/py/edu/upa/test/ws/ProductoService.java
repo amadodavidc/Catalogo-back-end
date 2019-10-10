@@ -108,18 +108,4 @@ public class ProductoService {
 					.build();
 		}
 	}
-	//TODO verificar getWithCategoria
-	@GET
-	@Path("/pruebadecategorias")
-	@Produces({"aplication/json"})
-	public Response updateCategoria(@QueryParam("descripcionCategoria") String descripcionCategoria) {
-		try {
-			return Response.ok().entity(bc.getWithCategoria(descripcionCategoria)).build();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-					.entity("ERROR_GENERICO")
-					.build();
-		}
-	}
 }

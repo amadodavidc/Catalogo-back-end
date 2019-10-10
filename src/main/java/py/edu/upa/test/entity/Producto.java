@@ -9,11 +9,13 @@ import py.edu.upa.test.entity.Producto_estado;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "Producto", schema = "public")
+@Table(name = "producto", schema = "public")
 public class Producto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@SequenceGenerator(name = "producto_id_producto_seq", sequenceName = "producto_id_producto_seq", allocationSize = 1, schema= "public")
+    @GeneratedValue(generator = "producto_id_producto_seq")
 	private Integer id_producto;
 
 	@Column
@@ -22,26 +24,23 @@ public class Producto implements Serializable {
 	@Column
 	private Integer precio;
 	
-	@Column(name = "stock_total")
-	private Integer stockTotal;
-	
-	@Column(name = "stock_actual")
-	private Integer stockActual;
-	
 	@JoinColumn(name = "id_producto_estado")
 	@ManyToOne
-	private Producto_estado idProductoEstado;
+	private Producto_estado productoEstado;
 	
 	@JoinColumn(name = "id_proveedor")
 	@ManyToOne
-	private Proveedor idProveedor;
+	private Proveedor proveedor;
 	
 	@JoinColumn (name = "id_categoria")
 	@ManyToOne
 	private Categoria categoria;
 	
-	@Column(name = "fecha_compra")
+	@Column(name = "fecha_de_compra")
 	private Timestamp fechaCompra;
+	
+	@Column
+	private String image;
 	
 	@Column
 	private Boolean favorito;
@@ -76,36 +75,20 @@ public class Producto implements Serializable {
 		this.precio = precio;
 	}
 
-	public Integer getStockTotal() {
-		return stockTotal;
-	}
-
-	public void setStockTotal(Integer stockTotal) {
-		this.stockTotal = stockTotal;
-	}
-
-	public Integer getStockActual() {
-		return stockActual;
-	}
-
-	public void setStockActual(Integer stockActual) {
-		this.stockActual = stockActual;
-	}
-
 	public Producto_estado getIdProductoEstado() {
-		return idProductoEstado;
+		return productoEstado;
 	}
 
-	public void setIdProductoEstado(Producto_estado idProductoEstado) {
-		this.idProductoEstado = idProductoEstado;
+	public void setIdProductoEstado(Producto_estado productoEstado) {
+		this.productoEstado = productoEstado;
 	}
 
 	public Proveedor getIdProveedor() {
-		return idProveedor;
+		return proveedor;
 	}
 
-	public void setIdProveedor(Proveedor idProveedor) {
-		this.idProveedor = idProveedor;
+	public void setIdProveedor(Proveedor proveedor) {
+		this.proveedor = proveedor;
 	}
 
 	public Categoria getCategoria() {
@@ -118,6 +101,14 @@ public class Producto implements Serializable {
 	
 	public Timestamp getFechaCompra() {
 		return fechaCompra;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public void setFechaCompra(Timestamp fechaCompra) {

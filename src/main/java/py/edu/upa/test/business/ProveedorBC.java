@@ -17,13 +17,13 @@ public class ProveedorBC {
 	public List<Proveedor> find() {
 		return dao.find();
 	}
-	public Proveedor findById(Integer id_proveedor) {
-		return dao.findById(id_proveedor);
-	}
-	public void insert(Proveedor p) {
-		dao.insert(p);
-	}
-	public void update(Integer id_proveedor, Proveedor p) {
-		dao.update(id_proveedor, p);
-	}
+//	public Proveedor findById(Integer id_proveedor) {
+//		return dao.findById(id_proveedor);
+//	}
+//	public void insert(Proveedor p) {
+//		dao.insert(p);
+//	}
+//	public void update(Integer id_proveedor, Proveedor p) {
+//		dao.update(id_proveedor, p);
+//	}
 }

@@ -14,17 +14,17 @@ public class Proveedor implements Serializable{
 	@Column
 	private String nombre;
 	
-	@Column
-	private String RUC;
-	
-	@Column
-	private String direccion;
-	
-	@Column(name = "correo_electronico")
-	private String correoElectronico;
-	
-	@Column(name = "numero_telefonico")
-	private Integer numeroTelefonico;
+//	@Column
+//	private String RUC;
+//	
+//	@Column
+//	private String direccion;
+//	
+//	@Column(name = "correo_electronico")
+//	private String correoElectronico;
+//	
+//	@Column(name = "numero_telefonico")
+//	private Integer numeroTelefonico;
 	
 	public Proveedor( ) {
 	}
@@ -44,36 +44,36 @@ public class Proveedor implements Serializable{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	public String getRUC() {
-		return RUC;
-	}
-
-	public void setRUC(String rUC) {
-		RUC = rUC;
-	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
-	public String getCorreoElectronico() {
-		return correoElectronico;
-	}
-
-	public void setCorreoElectronico(String correoElectronico) {
-		this.correoElectronico = correoElectronico;
-	}
-
-	public Integer getNumeroTelefonico() {
-		return numeroTelefonico;
-	}
-
-	public void setNumeroTelefonico(Integer numeroTelefonico) {
-		this.numeroTelefonico = numeroTelefonico;
-	}
+//
+//	public String getRUC() {
+//		return RUC;
+//	}
+//
+//	public void setRUC(String rUC) {
+//		RUC = rUC;
+//	}
+//
+//	public String getDireccion() {
+//		return direccion;
+//	}
+//
+//	public void setDireccion(String direccion) {
+//		this.direccion = direccion;
+//	}
+//
+//	public String getCorreoElectronico() {
+//		return correoElectronico;
+//	}
+//
+//	public void setCorreoElectronico(String correoElectronico) {
+//		this.correoElectronico = correoElectronico;
+//	}
+//
+//	public Integer getNumeroTelefonico() {
+//		return numeroTelefonico;
+//	}
+//
+//	public void setNumeroTelefonico(Integer numeroTelefonico) {
+//		this.numeroTelefonico = numeroTelefonico;
+//	}
 }
