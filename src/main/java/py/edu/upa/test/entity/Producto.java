@@ -81,11 +81,11 @@ public class Producto implements Serializable {
 		this.disponible = disponible;
 	}
 
-	public Proveedor getIdProveedor() {
+	public Proveedor getProveedor() {
 		return proveedor;
 	}
 
-	public void setIdProveedor(Proveedor proveedor) {
+	public void setProveedor(Proveedor proveedor) {
 		this.proveedor = proveedor;
 	}
 

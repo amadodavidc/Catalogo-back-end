@@ -91,7 +91,7 @@ public class ProductoService {
 	@GET
 	@Path("/pruebas")
 	@Produces({ "application/json" })
-	public Response update(@QueryParam("filter") String filter) {
+	public Response update2(@QueryParam("filter") String filter) {
 		System.out.println("=================================");
 		System.out.println(filter);
 		try {

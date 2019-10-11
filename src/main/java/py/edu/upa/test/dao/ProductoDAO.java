@@ -87,7 +87,7 @@ public class ProductoDAO {
 		p.setNombre(producto.getNombre());
 		p.setPrecio(producto.getPrecio());
 		p.setDisponible(producto.getDisponible());
-		p.setIdProveedor(producto.getIdProveedor());
+		p.setProveedor(producto.getProveedor());
 		p.setCategoria(producto.getCategoria());
 		p.setFechaCompra(producto.getFechaCompra());
 		p.setImage(producto.getImage());
