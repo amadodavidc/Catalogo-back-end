@@ -22,7 +22,6 @@
 			it in the source at src/test/resources/arquillian-ds.xml -->
 		<jta-data-source>java:/TPGrupalDS</jta-data-source>
 		<class>py.edu.upa.test.entity.Producto</class>
-		<class>py.edu.upa.test.entity.Producto_estado</class>
 		<class>py.edu.upa.test.entity.Proveedor</class>
 		<class>py.edu.upa.test.entity.Categoria</class>
 		<properties>

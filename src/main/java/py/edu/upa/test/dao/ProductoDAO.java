@@ -58,25 +58,25 @@ public class ProductoDAO {
 		return (Producto) criteria.uniqueResult();
 
 	}
-	@SuppressWarnings ("unchecked")
-	public List<Producto> findByCategoria(String descripcionCategoria) {
-		
-		Session session = (Session) entityManager.getDelegate();
-		Criteria criteria = session.createCriteria(Producto.class);
-		criteria.createAlias("categoria", "categoria");
-//		criteria.createAlias(associationPath, alias)
-		
-//		criteria.add(Restrictions.eq("idCategoria", idCategoria));
-		criteria.add(Restrictions.and(
-//				Restrictions.ilike(propertyName, value)
-				Restrictions.ilike("categoria.descripcion", descripcionCategoria),
-				Restrictions.or(
-						Restrictions.eq("deleted", false),
-						Restrictions.isNull("deleted")
-				)));
-		return criteria.list();
-
-	}
+//	@SuppressWarnings ("unchecked")
+//	public List<Producto> findByCategoria(String descripcionCategoria) {
+//		
+//		Session session = (Session) entityManager.getDelegate();
+//		Criteria criteria = session.createCriteria(Producto.class);
+//		criteria.createAlias("categoria", "categoria");
+////		criteria.createAlias(associationPath, alias)
+//		
+////		criteria.add(Restrictions.eq("idCategoria", idCategoria));
+//		criteria.add(Restrictions.and(
+////				Restrictions.ilike(propertyName, value)
+//				Restrictions.ilike("categoria.descripcion", descripcionCategoria),
+//				Restrictions.or(
+//						Restrictions.eq("deleted", false),
+//						Restrictions.isNull("deleted")
+//				)));
+//		return criteria.list();
+//
+//	}
 	
 	public void insert(Producto p){
 		entityManager.persist(p);
@@ -86,7 +86,7 @@ public class ProductoDAO {
 		Producto p = findById(id_producto);
 		p.setNombre(producto.getNombre());
 		p.setPrecio(producto.getPrecio());
-		p.setIdProductoEstado(producto.getIdProductoEstado());
+		p.setDisponible(producto.getDisponible());
 		p.setIdProveedor(producto.getIdProveedor());
 		p.setCategoria(producto.getCategoria());
 		p.setFechaCompra(producto.getFechaCompra());

@@ -32,7 +32,7 @@ public class ProductoBC {
 	public List<Producto> getWithFilter(String filter){
 		return dao.findWithFilter(filter);
 	}
-	public List<Producto> getWithCategoria(String descripcionCategoria){
-		return dao.findByCategoria(descripcionCategoria);
-	}
+//	public List<Producto> getWithCategoria(String descripcionCategoria){
+//		return dao.findByCategoria(descripcionCategoria);
+//	}
 }

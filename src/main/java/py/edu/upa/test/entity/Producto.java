@@ -5,7 +5,6 @@ import javax.persistence.*;
 
 import py.edu.upa.test.entity.Categoria;
 import py.edu.upa.test.entity.Proveedor;
-import py.edu.upa.test.entity.Producto_estado;
 import java.sql.Timestamp;
 
 @Entity
@@ -24,9 +23,8 @@ public class Producto implements Serializable {
 	@Column
 	private Integer precio;
 	
-	@JoinColumn(name = "id_producto_estado")
-	@ManyToOne
-	private Producto_estado productoEstado;
+	@Column
+	private Boolean disponible;
 	
 	@JoinColumn(name = "id_proveedor")
 	@ManyToOne
@@ -75,12 +73,12 @@ public class Producto implements Serializable {
 		this.precio = precio;
 	}
 
-	public Producto_estado getIdProductoEstado() {
-		return productoEstado;
+	public Boolean getDisponible() {
+		return disponible;
 	}
 
-	public void setIdProductoEstado(Producto_estado productoEstado) {
-		this.productoEstado = productoEstado;
+	public void setDisponible(Boolean disponible) {
+		this.disponible = disponible;
 	}
 
 	public Proveedor getIdProveedor() {
